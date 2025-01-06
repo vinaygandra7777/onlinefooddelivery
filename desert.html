@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dessert Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alumni+Sans+Pinstripe:ital@0;1&family=Cagliostro&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Delius+Swash+Caps&family=Delius+Unicase:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oi&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0%;
+      padding: 0%;
+      font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+    }
+    .navi{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:24em
+    
+}
+.navi a{
+    color: black;
+    text-decoration: none;
+}
+.navi a:hover{
+  color: #1f9664;
+}
+.navi input{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 20vw;
+    box-shadow: 0px 0px 3px 0px black;
+}
+.nav{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap:5em
+}
+.navi img{
+    width:3vw;
+    height: 6vh;
+    margin-left: 5em;
+}
+header{
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 0px 3px 0px black;
+    width: 100%;
+    padding: 10px;
+}
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4em;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .card-details {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .card-price {
+      font-size: 1.2rem;
+      color: #28a745;
+      font-weight: bold;
+    }
+    .buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  margin-left: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#search-bar:focus {
+  outline: none;
+  border-color: #00704a;
+}
+.sidebar{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 5%;
+  gap:2px
+
+}
+.sidebar button{
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  background-color:#1f9664;
+
+  
+}
+.sidebar button:hover{
+  background-color: white;
+  cursor: pointer;
+}
+.sidebar1{
+  background-color: #1f9664;
+}
+.cart-btn{
+  background-color: #1f9664;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.popup {
+  position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      padding: 2em;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#popup-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#go-to-cart-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#go-to-cart-btn:hover {
+  background-color: #45a049;
+}
+@media(max-width:600px){
+  body{
+    width: 600px;
+  }
+  .navi{
+    width: 600px;
+    gap:5em
+
+  }
+  .navi img{
+    width: 50%;
+    margin-left: 0;
+  }
+  .nav{
+    gap:3em
+  }
+  .container{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:2em;
+
+  }
+  .sidebar1{
+    width: 670px;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navi">
+        <div class="img">
+            <img src="pics/starbucks.png" alt="">
+        </div>
+        <div class="nav">
+        <div class="navi1">
+            <a href="main.html">Home</a>
+        </div>
+        <div class="navi2">
+            <a href="coffe.html">Order</a>
+        </div>
+        <div class="navi3">
+            <a href="cart.html">Cart</a>
+        </div>
+    </div>
+    </div>
+</header>
+  <br><br>
+  <div class="sidebar1">
+    <br><br><br>
+    <div class="sidebar">
+      <button class="sidebar2"><img src="https://www.starbucks.in/assets/icon/Shape%20green.svg"> Dine-In</button>
+      <button class="sidebar2"><img src="https://www.starbucks.in/assets/icon/homegreen.svg"> Takeaway</button>
+    </div>
+    <br>
+  </div>
+  <div class="container" id="dessert-container"></div>
+  <div id="popup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <img id="popup-img" src="" alt="Drink Image">
+      <h3 id="popup-name"></h3>
+      <p id="popup-description"></p>
+      <button id="go-to-cart-btn" onclick="goToCart()">Go to Cart</button>
+    </div>
+  </div> 
+
+  <script>
+    const desserts = [
+  {
+    name: "Chocolate Lava Cake",
+    description: "A warm, gooey chocolate cake with a molten chocolate center.",
+    image: "https://handletheheat.com/wp-content/uploads/2018/01/Chocolate-Lava-Cakes-SQUARE.png",
+    rating: 4.8,
+    price: 450.89,
+    calories: 350,
+  },
+  {
+    name: "Classic Cheesecake",
+    description: "Rich and creamy cheesecake with a buttery graham cracker crust.",
+    image: "https://sallysbakingaddiction.com/wp-content/uploads/2018/05/perfect-cheesecake-recipe.jpg",
+    rating: 4.7,
+    price: 400.99,
+    calories: 400,
+  },
+  {
+    name: "Macarons",
+    description: "Colorful and delicate French almond meringue cookies with a creamy filling.",
+    image: "https://sallysbakingaddiction.com/wp-content/uploads/2021/02/french-macarons.jpg",
+    rating: 4.5,
+    price: 250.99,
+    calories: 90,
+  },
+  {
+    name: "Tiramisu",
+    description: "An Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.",
+    image: "https://www.cookingclassy.com/wp-content/uploads/2022/08/tiramisu-17-768x1152.jpg",
+    rating: 4.9,
+    price: 450.89,
+    calories: 450,
+  },
+  {
+    name: "Ice Cream Sundae",
+    description: "Vanilla ice cream topped with chocolate syrup, whipped cream, and a cherry.",
+    image: "https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-10.jpg",
+    rating: 4.6,
+    price:250.89,
+    calories: 300,
+  },
+  {
+    name: "Strawberry Shortcake",
+    description: "A fluffy sponge cake layered with fresh strawberries and whipped cream.",
+    image: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/newscms/2023_19/1993691/strawberry-shortcake-mc-2x1-230511.jpg",
+    rating: 4.4,
+    price: 250.99,
+    calories: 320,
+  },
+  {
+    name: "Brownie Sundae",
+    description: "A rich chocolate brownie topped with vanilla ice cream and hot fudge.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxsvKXloYV4x4EUSovxbSqNdZbZEyN_MUfVA&s",
+    rating: 4.7,
+    price: 546.89,
+    calories: 430,
+  },
+  {
+    name: "Fruit Tart",
+    description: "A buttery tart shell filled with creamy custard and topped with fresh fruits.",
+    image: "https://www.culinaryhill.com/wp-content/uploads/2023/05/Fresh-Fruit-Tart-Culinary-Hill-LR-07.jpg",
+    rating: 4.6,
+    price: 479.99,
+    calories: 300,
+  },
+  {
+    name: "Panna Cotta",
+    description: "A silky Italian dessert made with sweetened cream and served with fruit coulis.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Panna_Cotta_with_cream_and_garnish.jpg/1280px-Panna_Cotta_with_cream_and_garnish.jpg",
+    rating: 4.8,
+    price: 519.99,
+    calories: 320,
+  },
+  {
+    name: "Carrot Cake",
+    description: "A moist cake filled with grated carrots and topped with cream cheese frosting.",
+    image: "https://cdn.igp.com/f_auto,q_auto,t_pnopt12prodlp/products/p-classic-carrot-cake-204292-m.jpg",
+    rating: 4.5,
+    price: 439.99,
+    calories: 340,
+  }
+
+    ];
+
+    const container = document.getElementById("dessert-container");
+
+    desserts.forEach(dessert => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${dessert.image}" alt="${dessert.name}">
+        <div class="card-body">
+          <div class="card-title">${dessert.name}</div>
+          <div class="card-description">${dessert.description}</div>
+          <div class="card-details">Rating: ⭐ ${dessert.rating} | Calories: ${dessert.calories} kcal</div>
+          <div class="card-price">₹${dessert.price.toFixed(2)}</div>
+          <br>
+          <button class="cart-btn" onclick='addToCart(${JSON.stringify(dessert)})'>Add Item</button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    function addToCart(dessert) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(dessert);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Show the popup
+  const popup = document.getElementById("popup");
+  const popupImg = document.getElementById("popup-img");
+  const popupName = document.getElementById("popup-name");
+  const popupDescription = document.getElementById("popup-description");
+  
+  popupImg.src = dessert.image;
+  popupName.textContent = `${dessert.name} added to cart!`;
+  popupDescription.textContent = `You have successfully added ${dessert.name} to your cart.`;
+
+  popup.style.display = "block"; // Show the popup
+
+  // Close popup after 5 seconds
+  setTimeout(() => {
+    popup.style.display = "none"; // Hide the popup
+  }, 3000);
+}
+function goToCart() {
+  window.location.href = "cart.html"; // Change this to your cart page URL
+}
+  </script>
+</body>
+</html>
+

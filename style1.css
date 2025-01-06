@@ -1,0 +1,478 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    font-family: "Alegreya SC", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.navi{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap:15em;
+}
+.navi a{
+    color: black;
+    text-decoration: none;
+}
+.navi a:hover{
+  color: #1f9664;
+}
+.navi input{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 20vw;
+    box-shadow: 0px 0px 3px 0px black;
+    font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.nav{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap:10em
+    
+}
+.navi img{
+    width:3vw;
+    height: 6vh;
+    margin-left: 5em;
+}
+header{
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 0px 3px 0px black;
+    width: 100%;
+    padding: 10px;
+}
+.mainclass{
+     width: 100vw;
+     height: 90vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap:5em;
+}
+.mainclass1 h1{
+  font-size: 4.5em;
+}
+.mainclass1{
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    color:black;
+    width: 60vw;
+    margin: 2em;
+
+}
+.mainclass1 p{
+  width: 100%;
+}
+.mainclass2{
+  width:40vw ;
+  background-color: rgba(1,113,67,255);
+  border-top-left-radius: 90em;
+  
+}
+.mainclass2 img{
+  height: 80vh;
+  width: 30vw;
+}
+.mainclass2 img:hover{
+  transform: translateY(-10px);
+  cursor: pointer;
+  
+}
+.mainclass1 span{
+    color:rgba(1,113,67,255);
+}
+.mainclass1 button{
+  background-color: rgba(1,113,67,255);
+  color:white;
+  padding: 13px;
+  width: 20%;
+  font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.menuitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13em;
+}
+.menuitem img{
+    width:10vw;
+    height: 20vh;
+    border-radius: 1000px;
+}
+.menuitem p{
+    text-align: center;
+    font-size: 1.4em;
+}
+.menuitem img:hover{
+  transform: scale(1.0.5);
+  border:2px solid #1f9664;
+}
+.secondclass1 img{
+    width:35vw;
+    height: 80vh;
+    border-radius: 20px;
+}
+
+.secondclass2{
+    margin-top: 10%;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+}
+
+.secondclass2 p{
+    width:40vw;
+
+}
+.mainsecond1{
+  background-image: url("pics/desert1.png");
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+}
+.secondclass{
+     width: 100vw;
+     height: 90vh;
+    display: flex;
+    justify-content: center;
+    gap:5em;
+
+}
+.secondclass4 img{
+  height: 80vh;
+}
+.secondclass3{
+  width:40%;
+  font-size:1.5em;
+  letter-spacing: 1px;
+  margin: 30px;
+  width: 50vw;
+
+}
+button{
+  background-color: #1f9664;
+  color: white;
+  padding: 13px;
+  border: none;
+  border-radius: 20px;
+  font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.recomd{
+  background-color: rgba(1,113,67,255);
+  height: 90vh;
+  
+}
+#card-container {
+    display: flex;
+    gap: 5em;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    width: 250px;
+    text-align: center;
+    overflow: hidden;
+    
+  }
+  
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .card p {
+    font-size: 16px;
+    margin: 5px 10px;
+  }
+  
+  .card .price {
+    font-size: 16px;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  
+  .card .rating {
+    color: #f39c12;
+    font-size: 16px;
+  }
+  
+  .card button {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #00704a;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+  }
+  
+  .card button:hover {
+    background-color: #005831;
+  }
+  .client p{
+    font-size: 3em;
+    text-align: center;
+    margin:10%;
+    margin-top:5%;
+    
+  }
+  .aboutus{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap:13em;
+    font-size: 1.3em;
+    color: white;
+  }
+  .icons{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:1em;
+    font-size: 2em;
+  }
+  footer{
+    width: 100vw;
+    background-color:rgba(1,113,67,255);
+  }
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: 250px;
+}
+
+.popup-content h2 {
+  font-size: 1.5em;
+  color: #1f9664;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background-color: #1f9664;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.popup-content button:hover {
+  background-color: #145c3a;
+}
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+.pop {
+  position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      padding: 2em;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 1000;
+}
+
+.popup-cont {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#popup-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#go-to-cart-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#go-to-cart-btn:hover {
+  background-color: #45a049;
+}
+@media (width<= 600px) {
+  body {
+    width: 600px; 
+    margin: 0;
+    padding: 0;
+  }
+  .navi {
+    gap: 1em;
+    justify-content: space-between;
+  }
+  .navi img {
+    width:10vw;
+    height: 10vh;
+    margin-left: 0;
+  }
+  .nav {
+    gap: 3.5em;
+  }
+  .navi input {
+    width: 100%;
+  }
+  .mainclass {
+    flex-direction: column;
+    gap: 2em;
+    height: auto;
+    margin: 0 auto;
+    padding: 1em;
+    margin-left: 30%;
+  }
+  .mainclass1 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .mainclass1 h1 {
+    font-size: 2.3em; 
+    width: 100%;
+  }
+  .mainclass1 p {
+    font-size: 1.2em;
+  }
+  .mainclass2 {
+    width: 100%;
+    background-color: white;
+  }
+  .mainclass2 img {
+    width: 100%;
+    height: auto;
+  }
+  .menuitem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap:4em;
+    margin-left: 20%;
+  }
+  .menuitem img {
+    width: 100%; 
+  }
+  .mainsecond{
+    margin-top: 30%;
+    height: auto;
+  }
+  .secondclass {
+    margin-top: 10%;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 5%;
+  }
+  .secondclass4 img{
+    width: 90%; 
+    height: auto;
+
+  }
+  .secondclass4 {
+    width: 600px;
+    padding: 1.5em;
+  }
+  .secondclass3 {
+    font-size: 1.5em;
+    width: 600px;
+  }
+  .mainsecond1 {
+    width: 190vw;
+    height: auto;
+    
+  }
+  .recomd {
+    width: 600px;
+    margin-top: 50%;
+    background-color: white;
+    height: auto;
+  }
+  #card-container {
+    width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding: 1em;
+    margin-left: 15%;
+  }
+  .client {
+    margin-left: 13%;
+    width: 100%;
+    font-size: 0.6em;
+    padding: 1em;
+  }
+  footer{
+    width: 190vw;
+  }
+  .aboutus {
+    display: grid;
+    gap: 2em;
+    margin-bottom: 5%;
+    margin-left: 0%;
+  }
+}
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alumni+Sans+Pinstripe:ital@0;1&family=Cagliostro&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Delius+Swash+Caps&family=Delius+Unicase:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oi&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+          font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+            margin: 20px;
+            background-color: #f9f9f9;
+            margin: 0%;
+            padding: 0%;
+        }
+        .navi{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:24em
+}
+.navi a{
+    color: black;
+    text-decoration: none;
+}
+.navi input{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 20vw;
+    box-shadow: 0px 0px 3px 0px black;
+}
+.navii{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap:5em
+}
+.navi img{
+    width:3vw;
+    height: 6vh;
+    margin-left: 5em;
+}
+.navi a:hover{
+  color: #1f9664;
+}
+header{
+    position: fixed;
+    z-index: 1;
+    background-color:white;
+    box-shadow: 0px 0px 3px 0px black;
+    width: 100%;
+    padding: 10px;
+}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .card:hover{
+  transform: translateY(-5px);
+}
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-body h3 {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+        .card-body p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .card-body .price {
+            font-weight: bold;
+            color: #333;
+        }
+        button{
+          background-color: #1f9664;
+          border: none;
+          padding: 10px;
+          border-radius: 20px;
+          color: white;
+          margin: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+        }
+        button:hover{
+          cursor: pointer;
+        }
+       
+        #cart {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        #cart h2 {
+            margin-top: 0;
+        }
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        #cart ul li {
+            margin: 10px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .popup {
+  position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      padding: 2em;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#popup-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#go-to-cart-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#go-to-cart-btn:hover {
+  background-color: #45a049;
+}
+        @media (max-width:600px){
+          body{
+            width:600px;
+
+          }
+          .navi{
+    width: 100%;
+    gap:2em;
+    justify-content: space-around;
+  }
+  .navi img{
+    width:10vw;
+    height: 8vh;
+    margin-left: 0;
+
+  }
+  .navii{
+    gap:1.5em;
+  }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navi">
+            <div class="img">
+                <img src="pics/starbucks.png" alt="">
+            </div>
+            <div class="navii">
+                <div class="navi1"><a href="main.html">Home</a></div>
+                <div class="navi2"><a href="coffe.html">Order</a></div>
+                <div class="navi3"><a href="cart.html">Cart</a></div>
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br>
+    <h1 style="margin-left: 5%;">CoffeAtHome</h1>
+    <div class="container" id="product-container"></div>
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+          <img id="popup-img" src="" alt="Drink Image">
+          <h3 id="popup-name"></h3>
+          <p id="popup-description"></p>
+          <button id="go-to-cart-btn" onclick="goToCart()">Go to Cart</button>
+        </div>
+      </div> 
+
+    <script src="coffename.js">
+    </script>
+
+</body>
+</html>

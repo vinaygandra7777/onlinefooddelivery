@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>starbucks</title>
+    <link href="style1.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/516f629e15.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alumni+Sans+Pinstripe:ital@0;1&family=Cagliostro&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Delius+Swash+Caps&family=Delius+Unicase:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oi&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="home">
+        <div class="navi">
+            <div class="img">
+                <img src="pics/starbucks.png" alt="">
+            </div>
+            <div class="nav">
+            <div class="navi1">
+                <a href="main.html">Home</a>
+            </div>
+            <div class="navi2">
+                <a href="coffe.html">Order</a>
+            </div>
+            <div class="navi3">
+                <a href="cart.html">Cart </a>
+            </div>
+            </div>
+            <div>
+                <input type="text"  placeholder="Looking for  something specific?" id="placevalue">
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br><br>
+    <main>
+        <div class="mainclass">
+            <div class="mainclass1">
+                <h1>It's not just Coffee it's<span> Starbucks</span></h1>
+                <br><br>
+                <p>At Starbucks, we believe coffee is more than just a beverage—it's a lifestyle. Every cup is crafted with care, blending rich flavors, premium ingredients, and a touch of passion. Whether you're savoring your favorite espresso.</p>
+                <br>
+                <a href="https://www.starbucks.in/Blogs"><button>learn More
+                </button></a>
+            </div>
+            <div class="mainclass2">
+                <img src="pics/starbuckland.png" alt="starbuckimage">
+            </div>
+        </div>
+        
+    </main>
+    <br><br><br>
+    <div id="offer-popup" class="popup">
+        <div class="popup-content">
+          <h2>Welcome to starbucks</h2>
+          <h2>Here is Your Welcome Bonus</h2>
+          <br>
+          <p>Apply coupon <b>(save50)</b> on your first order and enjoy your discount.</p>
+          <button id="close-popup">Close</button>
+        </div>
+      </div>
+      <div id="popup" class="pop" style="display: none;">
+        <div class="popup-cont">
+          <img id="popup-img" src="" alt="Drink Image">
+          <h3 id="popup-name"></h3>
+          <p id="popup-description"></p>
+          <button id="go-to-cart-btn" onclick="goToCart()">Go to Cart</button>
+        </div>
+      </div> 
+    <main class="mainidea">
+        <h1 style="text-align: center; font-size: 3em;">Handcrafted Curations</h1>
+        <br><br><br><br>
+        <div class="menuitem">
+            <div>
+                <a href="#bestseller"><img src="pics/Bestseller.jpg"></a>
+                <br>
+                <p>Bestseller</p>
+            </div>
+            <div>
+                <a href="coffe.html"><img src="pics/Drinks.jpg"></a>
+                <br>
+                <p>Drinks</p>
+            </div>
+            <div>
+                <a href="coffeename.html"><img src="pics/CoffeeAtHome.jpg"></a>
+                <br>
+                <p>CoffeeAtHome</p>
+            </div>
+            <div>
+                <a href="desert.html"><img src="pics/desert.png"></a>
+                <br>
+                <p>Desserts</p>
+            </div>
+        </div>
+    </main>
+    <br><br><br><br><br><br><br>
+    <main class="mainsecond">
+        <br><br><br>
+            <div class="secondclass" data-aos="fade-up">
+                <div class="secondclass4">
+                    <img src="pics/starbuckland2.png">
+                </div>
+            <div class="secondclass3">
+                <h1 style="font-size: 3em;">Coffee Heaven</h1>
+                <br>
+                <p>We blend rich flavors, handcrafted beverages, and a cozy ambiance to create a haven for coffee lovers. From perfectly brewed classics to innovative seasonal creations, every sip at Coffee Heaven is a journey of indulgence. </p>
+                <br><br>
+                <a href="coffe.html"><button>View all -> </button></a>
+            </div>
+            </div>
+        <br><br><br><br>
+    </main>
+    <main class="recomd" id="bestseller">
+        <br>
+        <div>
+            <h1 style="text-align: center;font-size: 3em";>Recommendations</h1>
+            <br><br><br>
+            <div id="card-container" class="bestitem"></div>
+        </div>
+        <br><br><br>
+    </main>
+    <br><br><br>
+    <main>
+        <div class="client" data-aos="zoom-in">
+            <h1 style="text-align: center; font-size: 2em;"><u>What our clients Say</u></h1>
+            <br><br>
+            <p>
+                    "It really saves me time and effort. Barista is exactly what our business has been lacking. I'm good to go. Thank you for making it painless, pleasant and most of all hassle free!"
+            </p>
+        </div>
+    </main>    
+    <br><br>
+    <footer>
+        <br><br><br>
+        <div class="aboutus">
+            <div class="aboutus1">
+                <h4>About us</h4>
+                <br>
+                <p>Our Hertiage</p>
+                <br>
+                <p>CoffeeAtHome</p>
+                <br>
+                <p>Our Company</p>
+
+            </div>
+            <div class="aboutus2">
+                <h4>Responsibility</h4>
+                <br>
+                <p>Diversity</p>
+                <br>
+                <p>Community</p>
+                <br>
+                <p>Ethical Sourcing</p>
+                <br>
+                <p>Environmental Stewardship</p>
+                <br>
+                <p>Learn More</p>
+                <br>
+                </div>
+            <div class="aboutus3">
+                <h4>Social Media</h4>
+                <br>
+                <div class="icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <p style="color: white; text-align: center; letter-spacing: 2px;">Copyright ©2024 All rights reserved | This template is made with  by Vinay</p>
+        <br>
+    </footer>
+    <script src="script1.js">
+    </script>
+</body>
+</html>

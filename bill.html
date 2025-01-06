@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Address</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Alegreya SC", serif;
+      background-color: #f9f9f9;
+    } 
+    main {
+      margin: 2em auto;
+      max-width: 800px;
+      background-color: white;
+      padding: 2em;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h2, h3 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.8em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .payment-options input {
+      margin-right: 0.5em;
+    }
+    .payment-details {
+      display: none;
+      flex-direction: column;
+      gap: 1em;
+    }
+    button {
+      padding: 0.8em;
+      background-color: #1f9664;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #146f4c;
+    }
+    .getback {
+      display: flex;
+      justify-content: center;
+      margin-top: 1em;
+      font-family: "Alegreya SC", serif;
+      background-color: #f9f9f9;
+    }
+    #payment-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      padding: 2em;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 1000;
+    }
+    #popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="getback">
+    <button onclick="backtohome()">BackToCart</button>
+  </div>
+  <main>
+    <h2>Billing Address</h2>
+    <form id="billing-form">
+      <div>
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+      </div>
+
+      <div>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+      </div>
+
+      <div>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+      </div>
+
+      <div>
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" placeholder="Enter your state" required>
+      </div>
+
+      <div>
+        <label for="zip">ZIP Code</label>
+        <input type="text" id="zip" name="zip" placeholder="Enter your ZIP code" required>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <h3>Mode of Payment</h3>
+      <div class="payment-options">
+        <label><input type="radio" name="payment" value="Credit Card" required onclick="showPaymentDetails('credit-card')"> Credit Card</label>
+        <label><input type="radio" name="payment" value="Debit Card" required onclick="showPaymentDetails('debit-card')"> Debit Card</label>
+        <label><input type="radio" name="payment" value="UPI" required onclick="showPaymentDetails('upi')"> UPI</label>
+        <label><input type="radio" name="payment" value="Cash on Delivery" required onclick="showdetails('none')"> Cash on Delivery</label>
+      </div>
+
+      <div class="payment-details" id="credit-card-details">
+        <h4>Credit Card Details</h4>
+        <label for="cc-number">Card Number</label>
+        <input type="text" id="cc-number" name="cc-number" placeholder="Enter your card number" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12})$">
+
+        <label for="cc-expiry">Expiry Date</label>
+        <input type="month" id="cc-expiry" name="cc-expiry" required>
+
+        <label for="cc-cvv">CVV</label>
+        <input type="text" id="cc-cvv" name="cc-cvv" placeholder="Enter CVV" required pattern="^\d{3,4}$">
+      </div>
+
+      <div class="payment-details" id="debit-card-details">
+        <h4>Debit Card Details</h4>
+        <label for="dc-number">Card Number</label>
+        <input type="text" id="dc-number" name="dc-number" placeholder="Enter your card number" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12})$">
+
+        <label for="dc-expiry">Expiry Date</label>
+        <input type="month" id="dc-expiry" name="dc-expiry" required>
+
+        <label for="dc-cvv">CVV</label>
+        <input type="text" id="dc-cvv" name="dc-cvv" placeholder="Enter CVV"required pattern="^\d{3,4}$">
+      </div>
+
+      <div class="payment-details" id="upi-details">
+        <h4>UPI Details</h4>
+        <label for="upi-id">UPI ID</label>
+        <input type="text" id="upi-id" name="upi-id" placeholder="Enter your UPI ID" required pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+      </div>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+  </main>
+  <div id="popup-overlay"></div>
+  <div id="payment-popup">
+    <h3>Total Amount to Be Paid: ₹<span id="total-amount">00.0</span></h3>
+    <button onclick="confirmPayment()">Make Payment</button>
+  </div>
+
+  <script src="bill.js">
+  </script>
+</body>
+</html>
+

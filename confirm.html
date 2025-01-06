@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .body {
+      font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+      /* background: linear-gradient(135deg, #1f9664, #a1e3b4); */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .confirmation {
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 2em;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+    }
+    .confirmation h1 {
+      color: #1f9664;
+      margin-bottom: 1em;
+      font-size: 2.5em;
+    }
+    .confirmation p {
+      margin: 1em 0;
+      font-size: 1.2em;
+      line-height: 1.5;
+    }
+    .delivery-time,#order-id {
+      font-weight: 700;
+      color: #146f4c;
+    }
+    button {
+      padding: 0.8em 2em;
+      background: #1f9664;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: all 0.3s ease;
+      margin-top: 1em;
+    }
+    button:hover {
+      background: #146f4c;
+      transform: translateY(-3px);
+    }
+    button:active {
+      transform: translateY(1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="body">
+  <div class="confirmation">
+    <h1>🎉 Thank You!</h1>
+    <p>Order Number:<span id="order-id"> </span></p>
+    <p>Your order has been placed successfully. 🛍️</p>
+    <p>Estimated delivery time: <span class="delivery-time" id="delivery-time"></span> minutes. 🚚</p>
+    <button onclick="goToHome()">Go to Home</button>
+  </div>
+  </div>
+  <canvas id="conflit"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <script>
+      function conf(){
+          const jsConfetti = new JSConfetti()
+          jsConfetti.addConfetti()
+      }
+  </script>
+
+  <script>
+    const con = document.getElementById('conflit').innerHTML =conf();
+    let orderid= Math.floor(Math.random() * (1000-500 +1)) + 1;
+    const deliveryTime = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+    document.getElementById("delivery-time").textContent = deliveryTime;
+    document.getElementById("order-id").textContent="#"+orderid;
+    setTimeout(() => {
+      alert("Thank you for your order! We are preparing it for delivery.");
+    }, 5000); 
+    function goToHome() {
+      window.location.href = "main.html";
+    }
+  </script>
+</body>
+</html>
+

@@ -150,8 +150,7 @@
       <div class="payment-details" id="credit-card-details">
         <h4>Credit Card Details</h4>
         <label for="cc-number">Card Number</label>
-        <input type="text" id="cc-number" name="cc-number" placeholder="Enter your card number" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12})$">
-
+        <input type="text" id="cc-number" name="cc-number" placeholder="Enter your card number" required >
         <label for="cc-expiry">Expiry Date</label>
         <input type="month" id="cc-expiry" name="cc-expiry" required>
 
@@ -162,7 +161,7 @@
       <div class="payment-details" id="debit-card-details">
         <h4>Debit Card Details</h4>
         <label for="dc-number">Card Number</label>
-        <input type="text" id="dc-number" name="dc-number" placeholder="Enter your card number" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12})$">
+        <input type="text" id="dc-number" name="dc-number" placeholder="Enter your card number" required>
 
         <label for="dc-expiry">Expiry Date</label>
         <input type="month" id="dc-expiry" name="dc-expiry" required>
@@ -174,7 +173,7 @@
       <div class="payment-details" id="upi-details">
         <h4>UPI Details</h4>
         <label for="upi-id">UPI ID</label>
-        <input type="text" id="upi-id" name="upi-id" placeholder="Enter your UPI ID" required pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        <input type="text" id="upi-id" name="upi-id" placeholder="Enter your UPI ID" required>
       </div>
 
       <button type="submit">Place Order</button>
